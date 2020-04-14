@@ -1,0 +1,16 @@
+{{#each data}}
+<div class="container">
+    <div class="card">
+        <h5 class="card-header bg-secondary text-light">{{title}}</h5>
+        <div class="card-body">
+            {{!-- <h5 class="card-title">Special title treatment</h5> --}}
+            <p class="card-text">{{preview}}</p>
+            <p class="card-text"><small class="text-muted"><a href={{link}} target="_blank">Read more</a></small></p>
+            {{!-- <a href="#" id="saveArticle" class="btn btn-info" data-id={{_id}}>Save Article</a> --}}
+            <button id="saveArticle" class="btn btn-info" data-id={{_id}}>Save Article</button>
+
+        </div>
+
+    </div>
+</div>
+{{/each}}
