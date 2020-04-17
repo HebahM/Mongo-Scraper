@@ -1,3 +1,5 @@
+<h3 class="text-info text-center">Saved Articles</h3>
+
 {{#each data}}
 <div class="container">
     <div class="card">
@@ -27,8 +29,11 @@
       <div class="modal-body">
         {{!-- {{#each notesDB}} --}}
         
-        {{>notes}}
-        <p>notes will go here</p>
+        {{!-- {{>notes}} --}}
+        {{#if note.body}}
+        <p>{{note.body}}<button type="button" class="btn-danger" data-id={{note._id}}>X</button></p>
+        {{/if}}
+        {{!-- <p>notes will go here</p> --}}
         {{!-- {{/each}} --}}
           <form>
               <textarea id="note{{_id}}" rows="4" cols="55" placeholder="New Note" class="noteToAdd"></textarea>
@@ -36,8 +41,8 @@
         {{!-- <p>Modal body text goes here.</p> --}}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary saveNote" data-id={{_id}}>Save changes</button>
+        <button type="button" class="btn btn-secondary modal-btn" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary saveNote" data-id={{_id}} data-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>

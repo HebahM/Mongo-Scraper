@@ -8,9 +8,52 @@ var db = require("../models");
 // mongoose.connect("mongodb://localhost/MongoScraper", { useNewUrlParser: true });
 
 
+
+// var scrape = async function () {
+
+//     var temp=[]
+//     // console.log("scrape js works")
+//   await axios.get("http://reuters.com").then(async function (response) {
+//         var $ = cheerio.load(response.data);
+//         // console.log("$ is: " + $)
+//         var articles = [];
+//         $("div.story-content").each(function (i, element) {
+
+//             var title = $(element).children("a").children("h3").text().trim();
+//             var link = $(element).children("a").attr("href");
+//             link = "https://reuters.com" + link;
+//             var preview = $(element).children("p").text();
+//             // var pic = $(element).siblings(".story-photo").children("a").children("img").attr("src")
+
+//             // Save these results in an object that we'll push into the results array we defined earlier
+//             if (title && link && preview) {
+//                 articles.push({
+//                     title: title,
+//                     link: link,
+//                     preview: preview
+//                     // image: pic
+//                 })
+//             };
+//         });
+//         console.log(articles)  
+//         // return articles;
+//        await db.Article.create(articles)
+//             .then(function (dbArticle) {
+//                 temp.push(dbArticle);
+//             })
+//             .catch(function (err) {
+//                 // If an error occurred, log it
+//                 console.log(err);
+//             });
+            
+//     })
+//     return temp
+// };
+
+
 var scrape = function () {
     // console.log("scrape js works")
-    axios.get("http://reuters.com").then(function (response) {
+    axios.get("http://reuters.com/news/technology").then(function (response) {
         var $ = cheerio.load(response.data);
         // console.log("$ is: " + $)
         var articles = [];
@@ -44,7 +87,8 @@ var scrape = function () {
             });
 
     })
-    location.reload();
+    // location.reload();
+    window.location.replace("/");
     return true;
 };
 
