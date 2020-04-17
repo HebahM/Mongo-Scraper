@@ -44,6 +44,7 @@ var scrape = function () {
             });
 
     })
+    location.reload();
     return true;
 };
 
