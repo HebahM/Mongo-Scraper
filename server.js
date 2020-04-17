@@ -37,9 +37,9 @@ app.engine('handlebars', exphbs({
 
 // app.use(logger("dev"));
 
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI);
 
 // // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
@@ -47,6 +47,3 @@ app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
 });
 
-
-
-// lines commented out: 40, 42 
