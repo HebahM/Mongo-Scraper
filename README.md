@@ -1,6 +1,6 @@
 # Mongo-Scraper
 
-### [Reuters News Scraper] (https://mongoscrpr.herokuapp.com/)
+### [Reuters News Scraper](https://mongoscrpr.herokuapp.com/)
 
 This app scrapes the Tech page from Reuters.com on demand.
 
